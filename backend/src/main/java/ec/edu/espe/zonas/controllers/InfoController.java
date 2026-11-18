@@ -22,6 +22,7 @@ public class InfoController {
         info.put("servicio", "zonas-backend");
         info.put("estado", "UP");
         info.put("pipeline", "DevSecOps CI/CD");
+        info.put("version", "1.1.0");
         return ResponseEntity.ok(info);
     }
 }
