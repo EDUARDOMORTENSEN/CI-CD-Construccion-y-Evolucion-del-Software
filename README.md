@@ -1,3 +1,23 @@
+# CI/CD — Construcción y Evolución del Software
+
+Pipeline **CI/CD DevSecOps** sobre un sistema de gestión de zonas y espacios: cada Pull Request a `test` pasa por análisis de seguridad con Machine Learning, pruebas unitarias y de integración, merge automático a `test` y `main`, y despliegue verificado de la imagen Docker en GitHub Packages.
+
+| Nodo | Etapa |
+|---|---|
+| 1 | Revisión de seguridad con ML (bloquea si detecta vulnerabilidades) |
+| 2 | Pruebas unitarias JUnit 5 + cobertura JaCoCo |
+| 3 | Pruebas de integración con RabbitMQ |
+| 4 / 4.5 | Merge automático a `test` y a `main` |
+| 5 | Build, publicación en `ghcr.io` y smoke tests |
+
+- Pipeline: `.github/workflows/main.yml`
+- Sistema local completo: `docker compose up -d --build`
+- Imagen: `ghcr.io/eduardomortensen/zonas-backend`
+
+**Créditos:** sistema base *Proyecto_Seguro_2P* de Mateo Caiza ([repositorio original](https://github.com/MATEOCAIZA/Proyecto_Seguro_2P)). Pipeline adaptado e integrado por Eduardo Mortensen.
+
+---
+
 # 🛡️ Guía Técnica: Pipeline de Machine Learning para Detección de Vulnerabilidades en Java 
 
 ## Resumen General
